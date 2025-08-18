@@ -3,6 +3,7 @@
 [user]
 	email = elmforestw@proton.me
 	name = ElmF
+	signingKey = 70A8B18888888888
 [core]
 	pager = delta
 [interactive]
@@ -13,3 +14,11 @@
 	conflictStyle = zdiff3
 [push]
 	autoSetupRemote = true
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[commit]
+	gpgsign = true
