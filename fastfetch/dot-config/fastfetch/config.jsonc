@@ -20,22 +20,16 @@
         {
             "type": "title",
             "color": {
-                "user": "green",
-                "at": "red",
-                "host": "blue"
+                "user": "magenta",
+                "at": "magenta",
+                "host": "magenta"
             }
         },
         "os",
         "kernel",
+        "wm",
         "memory",
         "packages",
-        "uptime",
-        {
-            "type": "colors",
-            "key": "Colors", // For printing icon
-            "block": {
-                "range": [1, 6]
-            }
-        }
+        "uptime"
     ]
 }
