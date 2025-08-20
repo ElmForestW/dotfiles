@@ -59,6 +59,7 @@ vim.lsp.enable({
 	"lua_ls",
 	"pyright",
 	"rust_analyzer",
+	"zls",
 })
 
 -- language servers
