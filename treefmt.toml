@@ -1,0 +1,15 @@
+# The formatter multiplexer - https://github.com/numtide/treefmt
+
+[formatter.lua]
+command = "stylua"
+includes = ["*.lua"]
+
+[formatter.toml]
+command = "taplo"
+options = ["format"]
+includes = ["*.toml"]
+
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+includes = ["*.css", "*.jsonc", "*.yml"]
