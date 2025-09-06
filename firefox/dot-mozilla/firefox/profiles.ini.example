@@ -1,0 +1,9 @@
+[Profile0]
+Default=1
+IsRelative=1
+Name=elmf
+Path=elmf
+
+[General]
+StartWithLastProfile=1
+Version=2
