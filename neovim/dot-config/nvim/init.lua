@@ -55,8 +55,11 @@ require("conform").setup({
 
 		["*"] = { "trim_whitespace" },
 	},
+	default_format_opts = {
+		lsp_format = "last",
+	},
 	format_after_save = {
-		lsp_format = "fallback",
+		lsp_format = "last",
 	},
 })
 
@@ -77,7 +80,7 @@ vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>f", function()
-	require("conform").format({ lsp_format = "fallback", async = true })
+	require("conform").format({ async = true })
 end)
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
 vim.keymap.set("n", "[g", function()
