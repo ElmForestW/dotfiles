@@ -62,6 +62,10 @@ vim.lsp.enable({
 	"zls",
 })
 
+-- shortcuts
+vim.keymap.set("n", "<leader>s", ":w<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+
 -- language servers
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
@@ -83,4 +87,4 @@ vim.keymap.set("n", "<leader>sb", MiniPick.builtin.buffers)
 vim.keymap.set("n", "<leader>sf", function()
 	MiniPick.builtin.files({ tools = "git" })
 end)
-vim.keymap.set("n", "<leader>sg", MiniPick.builtin.grep)
+vim.keymap.set("n", "<leader>sg", MiniPick.builtin.grep_live)
