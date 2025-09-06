@@ -25,6 +25,7 @@ export https_proxy=127.0.0.1:1080
 
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export CARGO_HOME=$XDG_DATA_HOME/cargo
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export GOPATH=$XDG_DATA_HOME/go
 
 export HISTFILE=$XDG_STATE_HOME/bash_history
