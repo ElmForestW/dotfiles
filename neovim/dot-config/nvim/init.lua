@@ -33,6 +33,13 @@ require("blink.cmp").setup({
 	keymap = {
 		preset = "enter",
 	},
+	completion = {
+		list = {
+			selection = {
+				preselect = false,
+			},
+		},
+	},
 })
 
 require("mini.pick").setup({
