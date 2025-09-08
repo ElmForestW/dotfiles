@@ -17,7 +17,7 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "None" })
 
 vim.pack.add({
-	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.0") },
+	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
