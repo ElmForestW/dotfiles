@@ -1,6 +1,3 @@
--- HACK: suppress diagnostics warning
-local vim = vim
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.timeoutlen = 500
@@ -55,12 +52,12 @@ require("conform").setup({
 
 		["*"] = { "trim_whitespace" },
 	},
+	-- FIXME: this currently does not work, see info at
+	-- https://github.com/stevearc/conform.nvim/issues/752
 	default_format_opts = {
-		lsp_format = "last",
+		lsp_format = "fallback",
 	},
-	format_after_save = {
-		lsp_format = "last",
-	},
+	format_after_save = {},
 })
 
 vim.lsp.enable({
@@ -70,6 +67,19 @@ vim.lsp.enable({
 	"pyright",
 	"rust_analyzer",
 	"zls",
+})
+
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+		},
+	},
 })
 
 -- shortcuts
@@ -91,8 +101,6 @@ vim.keymap.set("n", "]g", function()
 end)
 
 -- mini.pick
--- HACK: suppress diagnostics warning
-local MiniPick = MiniPick
 vim.keymap.set("n", "<leader>sb", MiniPick.builtin.buffers)
 vim.keymap.set("n", "<leader>sf", function()
 	MiniPick.builtin.files({ tools = "git" })
