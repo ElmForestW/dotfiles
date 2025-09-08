@@ -11,6 +11,10 @@ if status is-interactive
     alias vim=nvim
     alias ls=eza
     alias tree="eza --tree"
+
+    alias pb='curl -F "c=@-" "https://fars.ee/"'
+    alias setproxy="export http_proxy=127.0.0.1:1080; export https_proxy=127.0.0.1:1080"
+    alias unsetproxy="set -u https_proxy; set -u http_proxy"
 end
 
 export XDG_DATA_HOME=$HOME/.local/share
