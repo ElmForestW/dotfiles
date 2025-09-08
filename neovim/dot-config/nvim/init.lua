@@ -20,10 +20,18 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "None" })
 
 vim.pack.add({
-  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
+  {
+    src = "https://github.com/saghen/blink.cmp",
+    version = vim.version.range("*"),
+  },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
-  { src = "https://github.com/stevearc/conform.nvim" },
+  -- FIXME: See info at
+  -- https://github.com/stevearc/conform.nvim/issues/752
+  {
+    src = "https://github.com/stevearc/conform.nvim",
+    version = "f9ef25a7ef00267b7d13bfc00b0dea22d78702d5",
+  },
   { src = "https://github.com/echasnovski/mini.pick" },
 })
 
@@ -55,8 +63,6 @@ require("conform").setup({
 
     ["*"] = { "trim_whitespace" },
   },
-  -- FIXME: this currently does not work, see info at
-  -- https://github.com/stevearc/conform.nvim/issues/752
   default_format_opts = {
     lsp_format = "fallback",
   },
