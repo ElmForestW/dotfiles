@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 vim.o.timeoutlen = 500
 
 vim.o.number = true
@@ -10,6 +9,10 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.tabstop = 2
 
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.o.swapfile = false
 vim.o.undofile = true
 
 -- transparent background
@@ -82,27 +85,28 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+local map = vim.keymap.set
 -- shortcuts
-vim.keymap.set("n", "<leader>s", ":w<CR>")
-vim.keymap.set("n", "<leader>q", ":q<CR>")
+map("n", "<leader>s", ":w<CR>")
+map("n", "<leader>q", ":q<CR>")
 
 -- language servers
-vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
-vim.keymap.set("n", "<leader>f", function()
+map("n", "<leader>a", vim.lsp.buf.code_action)
+map("n", "<leader>d", vim.diagnostic.open_float)
+map("n", "<leader>f", function()
   require("conform").format({ async = true })
 end)
-vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
-vim.keymap.set("n", "[g", function()
+map("n", "<leader>r", vim.lsp.buf.rename)
+map("n", "[g", function()
   vim.diagnostic.jump({ count = -1 })
 end)
-vim.keymap.set("n", "]g", function()
+map("n", "]g", function()
   vim.diagnostic.jump({ count = 1 })
 end)
 
 -- mini.pick
-vim.keymap.set("n", "<leader>sb", MiniPick.builtin.buffers)
-vim.keymap.set("n", "<leader>sf", function()
+map("n", "<leader>sb", MiniPick.builtin.buffers)
+map("n", "<leader>sf", function()
   MiniPick.builtin.files({ tools = "git" })
 end)
-vim.keymap.set("n", "<leader>sg", MiniPick.builtin.grep_live)
+map("n", "<leader>sg", MiniPick.builtin.grep_live)
