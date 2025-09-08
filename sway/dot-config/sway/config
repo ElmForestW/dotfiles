@@ -1,4 +1,6 @@
 ### Autostarts
+# https://wiki.archlinux.org/title/Sway#Manage_Sway-specific_daemons_with_systemd
+exec_always systemctl --user start sway-session.target
 exec waybar
 exec fcitx5 -d
 
