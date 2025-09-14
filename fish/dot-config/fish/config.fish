@@ -9,6 +9,7 @@ if status is-interactive
     abbr --add -- gi 'lazygit'
 
     alias vim=nvim
+    alias hx=helix
     alias ls=eza
     alias tree="eza --tree"
 
