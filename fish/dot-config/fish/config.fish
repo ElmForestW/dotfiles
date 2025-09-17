@@ -5,10 +5,10 @@ if status is-interactive
     zoxide init fish | source
     fzf --fish | source
 
-    abbr --add -- v 'nvim'
+    abbr --add -- v 'vim'
     abbr --add -- gi 'lazygit'
 
-    alias vim=nvim
+    alias vim="NVIM_APPNAME=lazyvim nvim"
     alias hx=helix
     alias ls=eza
     alias tree="eza --tree"
