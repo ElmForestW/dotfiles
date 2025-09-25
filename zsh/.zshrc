@@ -33,8 +33,8 @@ POWERLEVEL9K_CONFIG_FILE="$HOME/.config/zsh/p10k.zsh"
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 alias ls="ls --color"
-alias ll="ls --color -l"
-alias la="ls --color -la"
+alias ll="ls --color -lh"
+alias la="ls --color -lAh"
 alias v="nvim"
 alias vim="nvim"
 alias gi="lazygit"
