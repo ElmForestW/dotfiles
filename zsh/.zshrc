@@ -21,6 +21,8 @@ fi
 # Zsh options
 autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}"
 bindkey -e
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
 setopt autocd
 setopt correctall
 setopt sharehistory
