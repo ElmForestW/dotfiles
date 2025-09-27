@@ -1,6 +1,8 @@
 ### Autostarts
+# https://github.com/swaywm/sway/wiki#systemd-and-dbus-activation-environments
 # https://wiki.archlinux.org/title/Sway#Manage_Sway-specific_daemons_with_systemd
-exec_always systemctl --user start sway-session.target
+exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+exec systemctl --user start sway-session.target
 exec waybar
 exec fcitx5 -d
 
