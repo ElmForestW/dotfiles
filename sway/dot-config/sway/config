@@ -26,7 +26,7 @@ gaps inner 10
 
 ### Key bindings
 bindsym $mod+Return exec $term
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 floating_modifier $mod normal
