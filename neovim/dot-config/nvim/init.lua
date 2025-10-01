@@ -33,6 +33,7 @@ vim.pack.add({
     version = "f9ef25a7ef00267b7d13bfc00b0dea22d78702d5",
   },
   { src = "https://github.com/echasnovski/mini.pick" },
+  { src = "https://github.com/nvim-mini/mini.files" },
 })
 
 require("vim._extui").enable({})
@@ -55,6 +56,8 @@ require("mini.pick").setup({
     use_cache = true,
   },
 })
+
+require("mini.files").setup()
 
 require("conform").setup({
   formatters_by_ft = {
@@ -110,9 +113,10 @@ map("n", "]g", function()
   vim.diagnostic.jump({ count = 1 })
 end)
 
--- mini.pick
+-- files
 map("n", "<leader>sb", MiniPick.builtin.buffers)
 map("n", "<leader>sf", function()
   MiniPick.builtin.files({ tools = "git" })
 end)
 map("n", "<leader>sg", MiniPick.builtin.grep_live)
+map("n", "<leader>e", MiniFiles.open)
