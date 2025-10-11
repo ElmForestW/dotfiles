@@ -20,7 +20,7 @@ set $menu fuzzel
 ### Output configuration
 output * bg ~/.config/sway/background.jpg fill
 
-default_border pixel 1
+default_border pixel 2
 gaps inner 10
 # blur enable
 
