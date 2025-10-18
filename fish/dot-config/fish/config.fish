@@ -8,7 +8,7 @@ if status is-interactive
     abbr --add -- v vim
     abbr --add -- gi lazygit
 
-    alias vim="nvim"
+    alias vim="NVIM_APPNAME=lazyvim nvim"
     alias hx=helix
     alias ls=eza
     alias tree="eza --tree"
