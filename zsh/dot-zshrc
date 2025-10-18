@@ -1,16 +1,16 @@
 # Download plugins
 PLUGINS_DIR=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins
 if [[ ! -e $PLUGINS_DIR ]]; then
-  mkdir -p $PLUGINS_DIR
+  mkdir -p "$PLUGINS_DIR"
 fi
 if [[ ! -e $PLUGINS_DIR/fast-syntax-highlighting ]]; then
-  git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git $PLUGINS_DIR/fast-syntax-highlighting
+  git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git "$PLUGINS_DIR"/fast-syntax-highlighting
 fi
 if [[ ! -e $PLUGINS_DIR/zsh-autosuggestions ]]; then
-  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git $PLUGINS_DIR/zsh-autosuggestions
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$PLUGINS_DIR"/zsh-autosuggestions
 fi
 if [[ ! -e $PLUGINS_DIR/powerlevel10k ]]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $PLUGINS_DIR/powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$PLUGINS_DIR"/powerlevel10k
 fi
 
 # Activate Powerlevel10k Instant Prompt
@@ -21,6 +21,7 @@ fi
 # Zsh options
 autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}"
 bindkey -e
+
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 setopt autocd
@@ -42,9 +43,9 @@ alias vim="nvim"
 alias gi="lazygit"
 
 # Load plugins
-source $PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme
+source "$PLUGINS_DIR"/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source "$PLUGINS_DIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$PLUGINS_DIR"/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/p10k.zsh
 
 # Load external programs

@@ -64,6 +64,17 @@ require("conform").setup({
     lua = { "stylua" },
     python = { "ruff" },
 
+    css = { "prettier" },
+    html = { "prettier" },
+    javascript = { "prettier" },
+    javascriptreact = { "prettier" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
+    markdown = { "prettier" },
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    yaml = { "prettier" },
+
     ["*"] = { "trim_whitespace" },
   },
   default_format_opts = {
@@ -73,10 +84,15 @@ require("conform").setup({
 })
 
 vim.lsp.enable({
+  "bashls",
   "clangd",
+  "cssls",
   "gopls",
+  "html",
   "lua_ls",
+  "nil_ls",
   "rust_analyzer",
+  "ts_ls",
   "ty",
   "zls",
 })
