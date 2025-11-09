@@ -13,7 +13,7 @@ if status is-interactive
     alias ls=eza
     alias tree="eza --tree"
 
-    alias pb='curl -F "c=@-" "https://pb.elmforestw-db1.workers.dev/"'
+    alias pb='curl -F "c=@-" "https://pb.elmf.me/"'
     alias setproxy="export http_proxy=http://127.0.0.1:1080; export https_proxy=http://127.0.0.1:1080"
     alias unsetproxy="set -u https_proxy; set -u http_proxy"
 end
