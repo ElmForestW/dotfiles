@@ -1,7 +1,0 @@
-theme = "github_dark_high_contrast_transparent"
-
-[editor]
-line-number = "relative"
-
-[editor.cursor-shape]
-insert = "bar"

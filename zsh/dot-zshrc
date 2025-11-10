@@ -24,7 +24,7 @@ bindkey -e
 
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
-setopt autocd
+bindkey "^[[3~" delete-char
 setopt correctall
 setopt sharehistory
 
@@ -36,11 +36,35 @@ POWERLEVEL9K_CONFIG_FILE="$HOME/.config/zsh/p10k.zsh"
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 alias ls="ls --color"
-alias ll="ls --color -lh"
-alias la="ls --color -lAh"
+alias ll="ls -lh"
+alias la="ls -lAh"
 alias v="nvim"
 alias vim="nvim"
 alias gi="lazygit"
+
+alias pb='curl -F "c=@-" "https://pb.elmf.me/"'
+alias setproxy="export {http,https}_proxy=http://127.0.0.1:1080"
+alias unsetproxy="unset {http,https}_proxy"
+
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+export PATH=$XDG_DATA_HOME/cargo/bin:$PATH
+
+export EDITOR=nvim
+export TERMINAL=foot
+export http_proxy=http://127.0.0.1:1080
+export https_proxy=http://127.0.0.1:1080
+
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export GOPATH=$XDG_DATA_HOME/go
+
+export HISTFILE=$XDG_STATE_HOME/bash_history
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
 
 # Load plugins
 source "$PLUGINS_DIR"/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh

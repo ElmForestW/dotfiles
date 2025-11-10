@@ -3,7 +3,6 @@
 # https://wiki.archlinux.org/title/Sway#Manage_Sway-specific_daemons_with_systemd
 exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 exec systemctl --user start sway-session.target
-exec waybar
 exec fcitx5 -d
 
 ### Variables
@@ -18,11 +17,10 @@ set $term footclient
 set $menu fuzzel
 
 ### Output configuration
-output * bg ~/.config/sway/background.jpg fill
-
+output * bg ~/.config/sway/background.png fill
+font pango:monospace 8
 default_border pixel 2
-gaps inner 10
-# blur enable
+titlebar_padding 4 2
 
 ### Key bindings
 bindsym $mod+Return exec $term
@@ -144,6 +142,17 @@ bindsym --locked XF86AudioMicMute exec wpctl set-mute \@DEFAULT_SOURCE@ toggle
 # bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
 bindsym Print exec grimshot copy area --notify
+
+#
+# Status Bar:
+#
+bar {
+    position top
+    status_command i3status
+    colors {
+        inactive_workspace #000000 #000000 #666666
+    }
+}
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*

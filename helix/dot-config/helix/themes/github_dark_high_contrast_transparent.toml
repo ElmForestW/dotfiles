@@ -1,6 +1,0 @@
-inherits = "github_dark_high_contrast"
-
-"ui.background" = { fg = "foreground" }
-"ui.statusline" = { fg = "foreground" }
-"ui.selection" = { bg = "scale.gray.8" }
-"ui.selection.primary" = { bg = "scale.gray.7" }
